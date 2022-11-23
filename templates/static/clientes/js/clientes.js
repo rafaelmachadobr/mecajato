@@ -58,6 +58,7 @@ function dados_cliente(){
         email.value = data['cliente']['email']
 
         div_carros = document.getElementById('carros')
+        div_carros.innerHTML = ""
 
         for(i=0; i<data['carros'].length; i++){
             div_carros.innerHTML += "\<form action='/clientes/update_carro/" + data['carros'][i]['id'] +"' method='POST'>\
@@ -85,3 +86,4 @@ function dados_cliente(){
 
 
 }
+
