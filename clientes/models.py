@@ -7,7 +7,7 @@ class Cliente(models.Model):
     cpf = models.CharField(max_length=12)
 
     def __str__(self) -> str:
-        return self.nome
+        return f'{self.nome} {self.sobrenome}' 
 
 class Carro(models.Model):
     carro = models.CharField(max_length=50)
@@ -16,3 +16,6 @@ class Carro(models.Model):
     cliente = models.ForeignKey(Cliente, on_delete=models.CASCADE)
     lavagens = models.IntegerField(default=0)
     consertos = models.IntegerField(default=0)
+    
+    def __str__(self) -> str:
+        return self.carro
